@@ -7,7 +7,7 @@ const voiceWorks = [
     id: "grima",
     title: "GRIMA",
     type: "Narración de Terror / Animación",
-    year: "2023",
+    year: "2025",
     status: "Proyecto Destacado",
     description: "Interpretación vocal del personaje Alison para cortometraje de animación de terror, explorando matices oscuros y atmosféricos.",
     link: "https://www.youtube.com/watch?v=kPzhHMVHrTA"
@@ -16,7 +16,7 @@ const voiceWorks = [
     id: "corazon-deforme",
     title: "Corazón Deforme",
     type: "Interpretación Musical / Soundtrack",
-    year: "2023",
+    year: "2025",
     status: "Canción Original",
     description: "Canción original creada para el cortometraje 'Jörmungandr', interpretada en su totalidad por Mia D'Mon.",
     link: "#" // Placeholder if no link provided yet
