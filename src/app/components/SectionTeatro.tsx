@@ -8,21 +8,21 @@ const plays = [
     id: "isidora-y-el-puma",
     title: "Isidora y el puma",
     role: "Actriz",
-    year: "2024",
+    year: "2025",
     director: "Compañía “Teatro del Valle Nonguen”"
   },
   {
     id: "vivimos-en-peligro",
     title: "Vivimos en peligro",
     role: "Actriz",
-    year: "2023",
+    year: "2025",
     director: "Asociación de Municipalidades Parque Nacional Nonguén"
   },
   {
     id: "salvemos-a-la-aurora",
     title: "Salvemos a la Aurora",
     role: "Actriz",
-    year: "2023",
+    year: "2017",
     director: "Compañía teatral “La otra zapatilla”"
   }
 ];
