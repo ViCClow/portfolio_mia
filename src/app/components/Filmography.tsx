@@ -4,12 +4,12 @@ import { motion } from 'motion/react';
 const credits = [
   { year: '2025', title: 'Cuando las hojas lloran', role: 'Protagonista', director: 'Cine de Autor / Académico', medium: 'Cortometraje' },
   { year: '2025', title: 'Jörmungandr', role: 'Protagonista', director: 'Cine de Autor / Académico', medium: 'Cortometraje' },
-  { year: '2024', title: 'Isidora y el puma', role: 'Actriz', director: 'Teatro del Valle Nonguen', medium: 'Teatro' },
-  { year: '2023', title: 'Vivimos en peligro', role: 'Actriz', director: 'Parque Nacional Nonguén', medium: 'Teatro' },
-  { year: '2023', title: 'Salvemos a la Aurora', role: 'Actriz', director: 'La otra zapatilla', medium: 'Teatro' },
-  { year: '2023', title: 'GRIMA', role: 'Actuación de Voz', director: 'Animación / Terror', medium: 'Voz / Short' },
-  { year: '2023', title: 'Bear Barber: Barbería del Ayer', role: 'Modelo', director: 'Comercial', medium: 'Modelado' },
-  { year: '2023', title: 'Elegancia Eléctrica', role: 'Modelo', director: 'Colab / Polas', medium: 'Modelado' },
+  { year: '2025', title: 'Isidora y el puma', role: 'Actriz', director: 'Teatro del Valle Nonguen', medium: 'Teatro' },
+  { year: '2025', title: 'Vivimos en peligro', role: 'Actriz', director: 'Parque Nacional Nonguén', medium: 'Teatro' },
+  { year: '2017', title: 'Salvemos a la Aurora', role: 'Actriz', director: 'La otra zapatilla', medium: 'Teatro' },
+  { year: '2025', title: 'GRIMA', role: 'Actuación de Voz', director: 'Animación / Terror', medium: 'Voz / Short' },
+  { year: '2025', title: 'Bear Barber: Barbería del Ayer', role: 'Modelo', director: 'Comercial', medium: 'Modelado' },
+  { year: '2026', title: 'Elegancia Eléctrica', role: 'Modelo', director: 'Colab / Polas', medium: 'Modelado' },
 ];
 
 export const Filmography = () => {
