@@ -7,7 +7,7 @@ export const Hero = () => {
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-[#1A1A1A]">
       <div className="absolute inset-0 opacity-60">
         <ImageWithFallback
-          src="https://i.ibb.co/yMtR9CH/DSC00438.jpg"
+          src="https://i.ibb.co/zTt15SPj/DSC00438.webp"
           alt="Mia D'Mon Portrait"
           className="w-full h-full object-cover object-[50%_5%] grayscale brightness-75 scale-125 shadow-[inset_0_0_100px_rgba(0,0,0,0.8)]"
         />
