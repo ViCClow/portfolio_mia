@@ -17,7 +17,7 @@ export const About = () => {
             <div className="absolute -top-10 -left-10 w-40 h-40 border border-[#8B0000]/30 hidden md:block" />
             <div className="relative z-10 aspect-[4/5] bg-[#2D2D2D]">
               <ImageWithFallback
-                src="https://i.ibb.co/9k2YWyLC/DSC00411.jpg"
+                src="https://i.ibb.co/B5Jkvtf5/DSC00411-ed.webp"
                 alt="Mia D'Mon Pola"
                 className="w-full h-full object-cover object-top grayscale"
               />

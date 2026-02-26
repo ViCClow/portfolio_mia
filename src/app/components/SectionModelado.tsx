@@ -5,12 +5,12 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Link } from 'react-router';
 
 const modelingPhotos = [
-  {
-    id: "bear-barber",
-    src: "https://i.ibb.co/BH1Fv178/photo-5096203216575639219-y.webp",
-    title: "Bear Barber: Barbería del Ayer",
-    category: "Comercial"
-  },
+    //{
+    //id: "bear-barber-2",
+    //src: "https://i.ibb.co/BH1Fv178/photo-5096203216575639219-y.webp",
+    //title: "Bear Barber 2: Revisitando el Glamour Retro",
+    //category: "Comercial"
+  //},
   {
     id: "rock",
     src: "https://i.ibb.co/4wBmNzY5/DSC00480-ed.webp",
@@ -34,6 +34,12 @@ const modelingPhotos = [
     src: "https://i.ibb.co/XxmDN8Ww/photo-5078274726002011894-y.webp",
     title: "Relatos de SpeakEasy",
     category: "Colaboración"
+  },
+  {
+    id: "bear-barber",
+    src: "https://i.ibb.co/C5GNWr9n/photo-5096194257273859518-y.webp",
+    title: "Bear Barber: Barbería del Ayer",
+    category: "Comercial"
   },
   {
     id: "r2estudio",

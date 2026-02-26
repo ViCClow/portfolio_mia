@@ -101,7 +101,7 @@ export const projects: Project[] = [
     year: "2025",
     category: "Comercial",
     description: "Una inmersión en la herencia de la barbería clásica donde Mia se posiciona como una figura de sofisticación disruptiva. En esta sesión, utiliza una presencia estática pero poderosa, convirtiéndose en el punto de fuga visual frente a un entorno cargado de reliquias. Su expresión contenida, de autoridad noir, eleva el entorno comercial a una pieza de época.",
-    mainImage: "https://i.ibb.co/BH1Fv178/photo-5096203216575639219-y.webp",
+    mainImage: "https://i.ibb.co/C5GNWr9n/photo-5096194257273859518-y.webp",
     gallery: [
     "https://i.ibb.co/BH1Fv178/photo-5096203216575639219-y.webp",
     "https://i.ibb.co/C5GNWr9n/photo-5096194257273859518-y.webp",
@@ -277,7 +277,7 @@ export const projects: Project[] = [
     year: "2025",
     category: "Colaboración / City Pop",
     description: "Lienzo de asfalto y fluorescencia bajo el temporal penquista. Mia ofrece aquí su interpretación más emocional, convirtiendo su rostro en el espejo de las luces de neón. Logra transmitir la dualidad agridulce del City Pop: el brillo vibrante del color frente a la melancolía reflexiva de la lluvia en la ciudad.",
-    mainImage: "https://i.ibb.co/d0N442kp/IMG-9772.webp",
+    mainImage: "https://i.ibb.co/93tR6W59/IMG-9833.webp",
   gallery: ["https://i.ibb.co/93tR6W59/IMG-9833.webp",
     "https://i.ibb.co/MxcSxzwd/IMG-9677.webp",
     "https://i.ibb.co/cScRBjC1/IMG-9685.webp",
