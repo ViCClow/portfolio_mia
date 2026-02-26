@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Mic2, Play, Volume2 } from 'lucide-react';
+import { Play } from 'lucide-react';
 
 const voiceWorks = [
   {
@@ -31,7 +31,7 @@ export const SectionVoz = () => {
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-sm uppercase tracking-[0.5em] text-[#8B0000] mb-4">El Poder del Sonido</h2>
+          <h2 className="text-sm uppercase tracking-[0.5em] text-[#DC143C] mb-4">El Poder del Sonido</h2>
           <h3 className="text-5xl md:text-7xl font-serif">Actuación de Voz</h3>
         </div>
 
@@ -45,15 +45,11 @@ export const SectionVoz = () => {
               transition={{ delay: index * 0.2 }}
               className="bg-[#2D2D2D]/30 p-8 md:p-12 border border-white/5 relative overflow-hidden group backdrop-blur-sm flex flex-col justify-between h-full"
             >
-              <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                <Mic2 className="w-24 h-24" />
-              </div>
-              
               <div className="relative z-10">
                 <div className="mb-8">
-                  <span className="text-[#8B0000] text-[10px] uppercase tracking-[0.4em] font-bold block mb-3">{work.type}</span>
+                  <span className="text-[#DC143C] text-sm md:text-sm uppercase tracking-[0.4em] font-bold block mb-3">{work.type}</span>
                   <h4 className="text-4xl md:text-5xl font-serif mb-2">{work.title}</h4>
-                  <p className="text-white/40 font-serif italic text-base">{work.year}</p>
+                  <p className="text-white/40 font-serif italic text-2xl md:text-3xl">{work.year}</p>
                 </div>
 
                 <p className="text-white/60 text-base leading-relaxed mb-12 font-light tracking-wide">
@@ -70,10 +66,10 @@ export const SectionVoz = () => {
                     whileTap={{ scale: 0.95 }}
                     className="flex items-center gap-4 group cursor-pointer no-underline"
                   >
-                    <span className="text-[10px] uppercase tracking-[0.4em] font-bold group-hover:text-[#8B0000] transition-colors text-[#FDFBF7]">
+                    <span className="text-sm md:text-base uppercase tracking-[0.4em] font-bold group-hover:text-[#DC143C] transition-colors text-[#FDFBF7]">
                       {work.id === 'grima' ? 'Ver en YouTube' : 'Proximamente'}
                     </span>
-                    <div className="w-12 h-12 bg-[#8B0000] rounded-full flex items-center justify-center group-hover:bg-[#A50000] transition-all duration-300">
+                    <div className="w-12 h-12 bg-[#DC143C] rounded-full flex items-center justify-center group-hover:bg-[#FF1744] transition-all duration-300">
                       <Play className="w-4 h-4 text-white fill-white" />
                     </div>
                   </motion.a>

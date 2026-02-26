@@ -21,7 +21,7 @@ export const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <span className="text-[#8B0000] uppercase tracking-[0.5em] text-sm mb-4 block font-medium">
+          <span className="text-[#DC143C] uppercase tracking-[0.5em] text-lg md:text-xl mb-4 block font-medium">
             Escenario y Pantalla
           </span>
           <h1 className="text-[#FDFBF7] text-7xl md:text-9xl font-serif mb-6 leading-none">
@@ -39,7 +39,7 @@ export const Hero = () => {
         transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
-        <div className="w-[1px] h-20 bg-gradient-to-b from-[#8B0000] to-transparent" />
+        <div className="w-[1px] h-20 bg-gradient-to-b from-[#DC143C] to-transparent" />
       </motion.div>
     </section>
   );
