@@ -51,7 +51,8 @@ const modelingPhotos = [
     id: "lluvia",
     src: "https://i.ibb.co/d0N442kp/IMG-9772.webp",
     title: "City Pop Nocturno",
-    category: "Colaboración"
+    category: "Colaboración",
+    rotate: "rotate-90 scale-[1.5] object-cover origin-center"
   },
   {
     id: "picnic",
@@ -85,10 +86,13 @@ export const SectionModelado = () => {
                 className="group relative overflow-hidden bg-[#1A1A1A]"
               >
                 <Link to={`/project/${photo.id}`}>
+                  {/* Se aplica una lógica condicional para el hover en base a si existe rotación o no */}
                   <ImageWithFallback
                     src={photo.src}
                     alt={photo.title}
-                    className="w-full saturate-50 group-hover:saturate-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
+                    className={`w-full saturate-50 group-hover:saturate-100 transition-all duration-700 ease-in-out ${
+                      photo.rotate ? `${photo.rotate} group-hover:scale-[1.6]` : 'group-hover:scale-105'
+                    }`}
                   />
                   <div className="absolute inset-0 bg-[#DC143C]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bg-gradient-to-t from-[#1A1A1A] to-transparent">

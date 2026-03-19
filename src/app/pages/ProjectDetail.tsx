@@ -21,7 +21,7 @@ export const ProjectDetail = () => {
     return (
       <div className="min-h-screen bg-[#FDFBF7] flex flex-col items-center justify-center p-6 text-center">
         <h2 className="text-4xl font-serif mb-4 text-[#1A1A1A]">Proyecto no encontrado</h2>
-        <Link to="/" className="text-[#8B0000] uppercase tracking-widest font-bold flex items-center gap-2">
+        <Link to="/" className="text-[#DC143C] uppercase tracking-widest font-bold flex items-center gap-2">
           <ArrowLeft size={16} /> Volver al Inicio
         </Link>
       </div>
@@ -53,7 +53,7 @@ export const ProjectDetail = () => {
   }, [lightboxIndex]);
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] selection:bg-[#8B0000] selection:text-white">
+    <div className="min-h-screen bg-[#FDFBF7] selection:bg-[#DC143C] selection:text-white">
       {/* Grain Overlay */}
       <div className="fixed inset-0 pointer-events-none z-[60] opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       
@@ -63,7 +63,7 @@ export const ProjectDetail = () => {
         <div className="max-w-7xl mx-auto px-6">
           <Link 
             to="/" 
-            className="inline-flex items-center gap-2 text-[#1A1A1A]/40 hover:text-[#8B0000] transition-colors uppercase tracking-[0.3em] text-[10px] font-bold mb-12"
+            className="inline-flex items-center gap-2 text-[#1A1A1A]/40 hover:text-[#DC143C] transition-colors uppercase tracking-[0.3em] text-[10px] font-bold mb-12"
           >
             <ArrowLeft size={14} /> Volver al Portafolio
           </Link>
@@ -75,7 +75,7 @@ export const ProjectDetail = () => {
               className="space-y-8"
             >
               <div>
-                <span className="text-[#8B0000] uppercase tracking-[0.4em] text-xs font-bold block mb-4">
+                <span className="text-[#DC143C] uppercase tracking-[0.4em] text-xs font-bold block mb-4">
                   {project.type === 'modelado' ? 'Modelado' : project.type === 'cortometraje' ? 'Actuación de Cine' : 'Teatro'}
                 </span>
                 <h1 className="text-6xl md:text-8xl font-serif leading-none mb-6 text-[#1A1A1A]">{project.title}</h1>
@@ -83,7 +83,7 @@ export const ProjectDetail = () => {
 
               <div className="flex flex-wrap gap-8 py-6 border-y border-[#1A1A1A]/10">
                 <div className="flex items-center gap-3">
-                  <Calendar size={18} className="text-[#8B0000]" />
+                  <Calendar size={18} className="text-[#DC143C]" />
                   <div>
                     <p className="text-[10px] uppercase tracking-widest text-[#1A1A1A]/40 font-bold">Año</p>
                     <p className="font-serif italic text-[#1A1A1A]">{project.year}</p>
@@ -91,7 +91,7 @@ export const ProjectDetail = () => {
                 </div>
                 {project.role && (
                   <div className="flex items-center gap-3">
-                    <User size={18} className="text-[#8B0000]" />
+                    <User size={18} className="text-[#DC143C]" />
                     <div>
                       <p className="text-[10px] uppercase tracking-widest text-[#1A1A1A]/40 font-bold">Rol / Papel</p>
                       <p className="font-serif italic text-[#1A1A1A]">{project.role}</p>
@@ -100,7 +100,7 @@ export const ProjectDetail = () => {
                 )}
                 {project.director && (
                   <div className="flex items-center gap-3">
-                    <Theater size={18} className="text-[#8B0000]" />
+                    <Theater size={18} className="text-[#DC143C]" />
                     <div>
                       <p className="text-[10px] uppercase tracking-widest text-[#1A1A1A]/40 font-bold">Compañía / Director</p>
                       <p className="font-serif italic text-[#1A1A1A]">{project.director}</p>
@@ -110,7 +110,7 @@ export const ProjectDetail = () => {
               </div>
 
               <div className="prose prose-lg">
-                <p className="text-[#1A1A1A]/70 leading-relaxed text-lg font-light first-letter:text-5xl first-letter:font-serif first-letter:text-[#8B0000] first-letter:mr-3 first-letter:float-left">
+                <p className="text-[#1A1A1A]/70 leading-relaxed text-lg font-light first-letter:text-5xl first-letter:font-serif first-letter:text-[#DC143C] first-letter:mr-3 first-letter:float-left">
                   {project.description}
                 </p>
               </div>
@@ -127,6 +127,9 @@ export const ProjectDetail = () => {
                 src={project.mainImage}
                 alt={project.title}
                 className={`w-full h-full object-cover grayscale-50 group-hover:grayscale-0 transition-all duration-1000 ${project.position || 'object-center'}`}
+                style={project.mainImageRotation ? { 
+                  transform: `rotate(${project.mainImageRotation}deg) scale(${Math.abs(project.mainImageRotation) === 90 ? 1.5 : 1})` 
+                } : undefined}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/40 to-transparent group-hover:from-[#1A1A1A]/60 transition-all duration-500" />
               <div className="absolute bottom-8 right-8 text-white/40 group-hover:text-white transition-colors duration-500">
@@ -140,24 +143,31 @@ export const ProjectDetail = () => {
             <div className="mt-32">
               <h2 className="text-3xl font-serif mb-12 text-center uppercase tracking-widest text-[#1A1A1A]">Mini Book</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {project.gallery.map((img, i) => (
-                  <motion.div 
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
-                    onClick={() => setLightboxIndex(i + 1)}
-                    className="aspect-[4/5] bg-[#2D2D2D] overflow-hidden group cursor-zoom-in relative"
-                  >
-                    <ImageWithFallback 
-                      src={img}
-                      alt={`Gallery ${i}`}
-                      className="w-full h-full object-cover grayscale-50 group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
-                  </motion.div>
-                ))}
+                {project.gallery.map((img, i) => {
+                  const rotation = project.galleryRotations?.[i];
+                  const needsScale = rotation && Math.abs(rotation) === 90;
+                  return (
+                    <motion.div 
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                      onClick={() => setLightboxIndex(i + 1)}
+                      className="aspect-[4/5] bg-[#2D2D2D] overflow-hidden group cursor-zoom-in relative"
+                    >
+                      <ImageWithFallback 
+                        src={img}
+                        alt={`Gallery ${i}`}
+                        className={`w-full h-full object-cover grayscale-50 group-hover:grayscale-0 transition-all duration-700 ${!needsScale ? 'group-hover:scale-105' : ''}`}
+                        style={rotation ? { 
+                          transform: `rotate(${rotation}deg) scale(${needsScale ? 1.5 : 1})` 
+                        } : undefined}
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           )}
@@ -211,6 +221,21 @@ export const ProjectDetail = () => {
                   src={allImages[lightboxIndex]} 
                   alt="Full size"
                   className="max-w-full max-h-[85vh] object-contain shadow-2xl"
+                  style={(() => {
+                    // If viewing main image (index 0)
+                    if (lightboxIndex === 0 && project.mainImageRotation) {
+                      return { transform: `rotate(${project.mainImageRotation}deg)` };
+                    }
+                    // If viewing gallery image (index > 0)
+                    if (lightboxIndex > 0 && project.galleryRotations) {
+                      const galleryIndex = lightboxIndex - 1;
+                      const rotation = project.galleryRotations[galleryIndex];
+                      if (rotation) {
+                        return { transform: `rotate(${rotation}deg)` };
+                      }
+                    }
+                    return undefined;
+                  })()}
                 />
               </motion.div>
               

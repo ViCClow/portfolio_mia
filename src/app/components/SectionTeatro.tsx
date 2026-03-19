@@ -73,7 +73,7 @@ export const SectionTeatro = () => {
       <div className="mt-32 relative h-48 flex items-center justify-center overflow-hidden bg-[#1A1A1A]">
         <div className="absolute inset-0 opacity-20">
           <ImageWithFallback 
-            src="https://i.ibb.co/yMtR9CH/DSC00438.jpg"
+            src="https://i.ibb.co/zTt15SPj/DSC00438.webp"
             alt="Grainy Background"
             className="w-full h-full object-cover grayscale"
           />

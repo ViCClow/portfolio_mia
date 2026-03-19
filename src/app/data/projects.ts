@@ -10,6 +10,8 @@ export interface Project {
   gallery?: string[];
   category?: string;
   position?: string;
+  mainImageRotation?: number;
+  galleryRotations?: { [index: number]: number };
 }
 
 export const projects: Project[] = [
@@ -165,11 +167,6 @@ export const projects: Project[] = [
     description: "Un estudio sobre el contraste entre la pulcritud técnica y la crudeza del rock. Aquí destaca la arquitectura capilar: el peinado esculpido en gel dicta la rigidez y el glamour de los años 50. Mia proyecta un lenguaje corporal afilado, capturando la esencia de una estrella de estudio que mantiene su distinción aristocrática en un escenario eléctrico.",
     mainImage: "https://i.ibb.co/4wBmNzY5/DSC00480-ed.webp",
     gallery: ["https://i.ibb.co/SDwxBxwN/DSC00732.webp",
-    "https://i.ibb.co/pvZtXRzV/DSC00410.webp",
-    "https://i.ibb.co/B5Jkvtf5/DSC00411-ed.webp",
-    "https://i.ibb.co/ynVwM67m/DSC00415-ed.webp",
-    "https://i.ibb.co/NdW6v50V/DSC00425-ed.webp",
-    "https://i.ibb.co/zTt15SPj/DSC00438.webp",
     "https://i.ibb.co/cXZhGzD1/DSC00478-ed.webp",
     "https://i.ibb.co/4wBmNzY5/DSC00480-ed.webp",
     "https://i.ibb.co/1J9jYmVN/DSC00509-ed.webp",
@@ -277,9 +274,21 @@ export const projects: Project[] = [
     year: "2025",
     category: "Colaboración / City Pop",
     description: "Lienzo de asfalto y fluorescencia bajo el temporal penquista. Mia ofrece aquí su interpretación más emocional, convirtiendo su rostro en el espejo de las luces de neón. Logra transmitir la dualidad agridulce del City Pop: el brillo vibrante del color frente a la melancolía reflexiva de la lluvia en la ciudad.",
-    mainImage: "https://i.ibb.co/93tR6W59/IMG-9833.webp",
-    gallery: ["https://i.ibb.co/93tR6W59/IMG-9833.webp",
-    "https://i.ibb.co/MxcSxzwd/IMG-9677.webp",
+    mainImage: "https://i.ibb.co/d0N442kp/IMG-9772.webp",
+    mainImageRotation: 90,
+    galleryRotations: {
+      0: -90,  // IMG-9677
+      5: 90,   // IMG-9770
+      6: 90,   // IMG-9772
+      7: 90,   // IMG-9773
+      10: 90,  // IMG-9802
+      11: 90,  // IMG-9803
+      12: 90,  // IMG-9804
+      13: 90,  // IMG-9806
+      14: 90,  // IMG-9807
+      15: 90   // IMG-9809
+    },
+    gallery: ["https://i.ibb.co/MxcSxzwd/IMG-9677.webp",
     "https://i.ibb.co/cScRBjC1/IMG-9685.webp",
     "https://i.ibb.co/PGHRYjXZ/IMG-9687.webp",
     "https://i.ibb.co/Y7C3QJgz/IMG-9695.webp",
@@ -296,7 +305,8 @@ export const projects: Project[] = [
     "https://i.ibb.co/C563dd1R/IMG-9807.webp",
     "https://i.ibb.co/TxYKxLCp/IMG-9809.webp",
     "https://i.ibb.co/Dg5kVs81/IMG-9816.webp",
-    "https://i.ibb.co/67T8w85f/IMG-9817.webp"]
+    "https://i.ibb.co/67T8w85f/IMG-9817.webp",
+    "https://i.ibb.co/93tR6W59/IMG-9833.webp"]
   },
   {
     id: "picnic",
