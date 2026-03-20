@@ -110,9 +110,16 @@ export const ProjectDetail = () => {
               </div>
 
               <div className="prose prose-lg">
-                <p className="text-[#1A1A1A]/70 leading-relaxed text-lg font-light first-letter:text-5xl first-letter:font-serif first-letter:text-[#DC143C] first-letter:mr-3 first-letter:float-left">
-                  {project.description}
-                </p>
+                {project.description.split('\n\n').map((parrafo, index) => (
+                  <p 
+                    key={index} 
+                    className={`text-[#1A1A1A]/70 leading-relaxed text-lg font-light mb-6 ${
+                      index === 0 ? 'first-letter:text-5xl first-letter:font-serif first-letter:text-[#DC143C] first-letter:mr-3 first-letter:float-left' : ''
+                    }`}
+                  >
+                    {parrafo}
+                  </p>
+                ))}
               </div>
             </motion.div>
 

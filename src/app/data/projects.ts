@@ -318,14 +318,31 @@ export const projects: Project[] = [
     mainImage: "https://i.ibb.co/hFM5qrvQ/photo-5078274726002012021-y.webp",
     gallery: [
     "https://i.ibb.co/hFM5qrvQ/photo-5078274726002012021-y.webp",
-    "https://i.ibb.co/kV8Yg5vm/photo-5078274726002012116-y.webp",
     "https://i.ibb.co/CKbThfLT/photo-5078274726002012022-y.webp",
     "https://i.ibb.co/LXxrmw6s/photo-5078274726002012023-y.webp",
-    "https://i.ibb.co/HDLbJVZf/photo-5078274726002012024-y.webp",
+    "https://i.ibb.co/kV8Yg5vm/photo-5078274726002012116-y.webp",
     "https://i.ibb.co/jZ1RTGPJ/photo-5078274726002012025-y.webp",
     "https://i.ibb.co/VYVNYCmF/photo-5078274726002012095-y.webp",
     "https://i.ibb.co/93kjnfzs/photo-5078274726002012101-y.webp",
     "https://i.ibb.co/KzD8mJ9f/photo-5078274726002012102-y.webp",
     "https://i.ibb.co/dstVZBjd/photo-5078274726002012109-y.webp"]
+  },
+  {
+    id: "bear-barber-2",
+    type: 'modelado',
+    title: "Bear Barber: Revisitando el pasado",
+    year: "2026",
+    category: "Comercial",
+    description: "Una inmersión cinematográfica en la metamorfosis del estilo retro, localizada en el nuevo escenario de Bear Barber. Esta segunda entrega colaborativa propone un viaje visual que trasciende la simple nostalgia, capturando la transición estética desde la pulcritud sofisticada de mediados de siglo hasta la crudeza texturizada del rock editorial de los 70.\n\nMia D'mon se posiciona como el hilo conductor de esta dualidad histórica. Su presencia domina el espacio, adaptándose con una facilidad iconoclasta a los contrastes de la sesión. Transiciona con fluidez entre encarnar la elegancia de una femme fatale moderna, donde su figura en satén dialoga con la arquitectura vintage de la locación, y proyectar una autoridad rebelde en un body monocromático rodeada de amplificadores y cuerdas. Ella no solo habita el entorno; ella unifica las épocas, demostrando una adaptabilidad artística que eleva la sesión comercial a una declaración de estilo atemporal y desafiante.",
+    mainImage: "https://i.ibb.co/tM8jrf1R/DSC00314.webp",
+    gallery: [
+    "https://i.ibb.co/YBtp8pCT/DSC00250.webp",
+    "https://i.ibb.co/fdZhcCJB/DSC00165.webp",
+    "https://i.ibb.co/TBfKSTDf/DSC00162.webp",
+    "https://i.ibb.co/27Ws30y0/DSC00153.webp",
+    "https://i.ibb.co/8D0M3HNT/DSC00100.webp",
+    "https://i.ibb.co/Pz59hbcD/DSC00069.webp",
+    "https://i.ibb.co/cKNBJK1r/DSC00310.webp",
+    "https://i.ibb.co/tM8jrf1R/DSC00314.webp"]
   }
 ];

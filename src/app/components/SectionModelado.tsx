@@ -6,9 +6,9 @@ import { Link } from 'react-router';
 
 const modelingPhotos = [
   {
-    id: "bear-barber",
-    src: "https://i.ibb.co/C5GNWr9n/photo-5096194257273859518-y.webp",
-    title: "Bear Barber: Barbería del Ayer",
+    id: "bear-barber-2",
+    src: "https://i.ibb.co/tM8jrf1R/DSC00314.webp",
+    title: "Bear Barber: Revisitando el pasado",
     category: "Comercial"
   },
   {
@@ -48,17 +48,23 @@ const modelingPhotos = [
     category: "Colaboración"
   },
   {
-    id: "lluvia",
-    src: "https://i.ibb.co/d0N442kp/IMG-9772.webp",
-    title: "City Pop Nocturno",
-    category: "Colaboración",
-    rotate: "rotate-90 scale-[1.5] object-cover origin-center"
+    id: "bear-barber",
+    src: "https://i.ibb.co/C5GNWr9n/photo-5096194257273859518-y.webp",
+    title: "Bear Barber: Barbería del Ayer",
+    category: "Comercial"
   },
   {
     id: "picnic",
     src: "https://i.ibb.co/hFM5qrvQ/photo-5078274726002012021-y.webp",
     title: "Placeres de Antaño",
     category: "Colaboración"
+  },
+  {
+    id: "lluvia",
+    src: "https://i.ibb.co/d0N442kp/IMG-9772.webp",
+    title: "City Pop Nocturno",
+    category: "Colaboración",
+    rotate: "rotate-90 scale-[1.5] object-cover origin-center"
   }
 ];
 
