@@ -17,14 +17,27 @@ export const Contact = () => {
     setIsSubmitting(true);
     setStatus("Enviando...");
 
+    // 1. Recolectamos los datos del formulario
     const formData = new FormData(e.currentTarget);
     
+    // Agregamos la llave ignorando la advertencia de TypeScript
     formData.append("access_key", (import.meta as any).env.VITE_WEB3FORMS_ACCESS_KEY);
+
+    // 2. Transformamos los datos a un objeto JSON puro (La forma más segura para Web3Forms)
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    // Imprimimos la llave en consola solo para asegurarnos de que Vite la está leyendo
+    console.log("Llave cargada:", (import.meta as any).env.VITE_WEB3FORMS_ACCESS_KEY ? "Sí" : "No");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
       });
 
       const data = await response.json();
@@ -33,11 +46,12 @@ export const Contact = () => {
         setStatus("¡Mensaje Enviado!");
         e.currentTarget.reset(); // Limpia el formulario
       } else {
-        console.log("Error", data);
+        // Si Web3Forms rechaza el mensaje, esto nos dirá por qué en la consola del navegador
+        console.error("Error de Web3Forms:", data.message);
         setStatus("Hubo un error");
       }
     } catch (error) {
-      console.log("Error", error);
+      console.error("Error de red:", error);
       setStatus("Hubo un error");
     }
 
@@ -92,32 +106,26 @@ export const Contact = () => {
           </div>
 
           <div className="bg-[#2D2D2D] p-8 md:p-12">
-            {/* Conectamos la función handleSubmit al formulario */}
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-widest text-white/40">Nombre Completo</label>
-                  {/* Agregamos name="name" y required */}
                   <input type="text" name="name" required className="w-full bg-transparent border-b border-white/20 py-2 focus:border-[#DC143C] outline-none transition-colors" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-widest text-white/40">Correo Electrónico</label>
-                  {/* Agregamos name="email" y required */}
                   <input type="email" name="email" required className="w-full bg-transparent border-b border-white/20 py-2 focus:border-[#DC143C] outline-none transition-colors" />
                 </div>
               </div>
               <div className="space-y-2">
                 <label className="text-[10px] uppercase tracking-widest text-white/40">Asunto</label>
-                {/* Agregamos name="subject" y required */}
                 <input type="text" name="subject" required className="w-full bg-transparent border-b border-white/20 py-2 focus:border-[#DC143C] outline-none transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-[10px] uppercase tracking-widest text-white/40">Mensaje</label>
-                {/* Agregamos name="message" y required */}
                 <textarea name="message" rows={4} required className="w-full bg-transparent border-b border-white/20 py-2 focus:border-[#DC143C] outline-none transition-colors resize-none" />
               </div>
               
-              {/* Desactivamos el botón mientras carga y mostramos el estado */}
               <button 
                 type="submit" 
                 disabled={isSubmitting}
