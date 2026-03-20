@@ -1,5 +1,4 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState } from 'react';
 import { Mail, Instagram, MapPin } from 'lucide-react';
 
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -9,6 +8,46 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 );
 
 export const Contact = () => {
+  // Estados para manejar el botón y el feedback visual
+  const [status, setStatus] = useState("Enviar Mensaje");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus("Enviando...");
+
+    const formData = new FormData(e.currentTarget);
+    
+    formData.append("access_key", (import.meta as any).env.VITE_WEB3FORMS_ACCESS_KEY);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("¡Mensaje Enviado!");
+        e.currentTarget.reset(); // Limpia el formulario
+      } else {
+        console.log("Error", data);
+        setStatus("Hubo un error");
+      }
+    } catch (error) {
+      console.log("Error", error);
+      setStatus("Hubo un error");
+    }
+
+    // Regresa el botón a la normalidad después de 3 segundos
+    setTimeout(() => {
+      setStatus("Enviar Mensaje");
+      setIsSubmitting(false);
+    }, 3000);
+  };
+
   return (
     <section id="contact" className="py-24 bg-[#1A1A1A] text-[#FDFBF7]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -53,27 +92,40 @@ export const Contact = () => {
           </div>
 
           <div className="bg-[#2D2D2D] p-8 md:p-12">
-            <form className="space-y-6">
+            {/* Conectamos la función handleSubmit al formulario */}
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-widest text-white/40">Nombre Completo</label>
-                  <input type="text" className="w-full bg-transparent border-b border-white/20 py-2 focus:border-[#DC143C] outline-none transition-colors" />
+                  {/* Agregamos name="name" y required */}
+                  <input type="text" name="name" required className="w-full bg-transparent border-b border-white/20 py-2 focus:border-[#DC143C] outline-none transition-colors" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-widest text-white/40">Correo Electrónico</label>
-                  <input type="email" className="w-full bg-transparent border-b border-white/20 py-2 focus:border-[#DC143C] outline-none transition-colors" />
+                  {/* Agregamos name="email" y required */}
+                  <input type="email" name="email" required className="w-full bg-transparent border-b border-white/20 py-2 focus:border-[#DC143C] outline-none transition-colors" />
                 </div>
               </div>
               <div className="space-y-2">
                 <label className="text-[10px] uppercase tracking-widest text-white/40">Asunto</label>
-                <input type="text" className="w-full bg-transparent border-b border-white/20 py-2 focus:border-[#DC143C] outline-none transition-colors" />
+                {/* Agregamos name="subject" y required */}
+                <input type="text" name="subject" required className="w-full bg-transparent border-b border-white/20 py-2 focus:border-[#DC143C] outline-none transition-colors" />
               </div>
               <div className="space-y-2">
                 <label className="text-[10px] uppercase tracking-widest text-white/40">Mensaje</label>
-                <textarea rows={4} className="w-full bg-transparent border-b border-white/20 py-2 focus:border-[#DC143C] outline-none transition-colors resize-none" />
+                {/* Agregamos name="message" y required */}
+                <textarea name="message" rows={4} required className="w-full bg-transparent border-b border-white/20 py-2 focus:border-[#DC143C] outline-none transition-colors resize-none" />
               </div>
-              <button className="w-full bg-[#DC143C] text-white py-4 uppercase tracking-[0.3em] text-xs font-bold hover:bg-[#FF1744] transition-colors cursor-pointer">
-                Enviar Mensaje
+              
+              {/* Desactivamos el botón mientras carga y mostramos el estado */}
+              <button 
+                type="submit" 
+                disabled={isSubmitting}
+                className={`w-full text-white py-4 uppercase tracking-[0.3em] text-xs font-bold transition-colors cursor-pointer ${
+                  status === "¡Mensaje Enviado!" ? "bg-green-600 hover:bg-green-700" : "bg-[#DC143C] hover:bg-[#FF1744]"
+                } disabled:opacity-50 disabled:cursor-not-allowed`}
+              >
+                {status}
               </button>
             </form>
           </div>
