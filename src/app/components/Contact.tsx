@@ -17,17 +17,16 @@ export const Contact = () => {
     setIsSubmitting(true);
     setStatus("Enviando...");
 
-    // 1. Recolectamos los datos del formulario
-    const formData = new FormData(e.currentTarget);
+    // 1. Guardamos la referencia del formulario antes de que React la borre
+    const form = e.currentTarget;
     
-    // Agregamos la llave ignorando la advertencia de TypeScript
+    const formData = new FormData(form);
+    
     formData.append("access_key", (import.meta as any).env.VITE_WEB3FORMS_ACCESS_KEY);
 
-    // 2. Transformamos los datos a un objeto JSON puro (La forma más segura para Web3Forms)
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
-    // Imprimimos la llave en consola solo para asegurarnos de que Vite la está leyendo
     console.log("Llave cargada:", (import.meta as any).env.VITE_WEB3FORMS_ACCESS_KEY ? "Sí" : "No");
 
     try {
@@ -44,9 +43,9 @@ export const Contact = () => {
 
       if (data.success) {
         setStatus("¡Mensaje Enviado!");
-        e.currentTarget.reset(); // Limpia el formulario
+        // 2. Usamos la variable que guardamos arriba para limpiar el formulario
+        form.reset(); 
       } else {
-        // Si Web3Forms rechaza el mensaje, esto nos dirá por qué en la consola del navegador
         console.error("Error de Web3Forms:", data.message);
         setStatus("Hubo un error");
       }
@@ -55,7 +54,6 @@ export const Contact = () => {
       setStatus("Hubo un error");
     }
 
-    // Regresa el botón a la normalidad después de 3 segundos
     setTimeout(() => {
       setStatus("Enviar Mensaje");
       setIsSubmitting(false);
